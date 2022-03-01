@@ -65,9 +65,11 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ cpu_perc, " CPU %s  ",		NULL},
-	{ ram_used, "RAM %s  ",		NULL},
-	{ netspeed_rx, "DL %s ",		"enp3s0"},
-	{ netspeed_tx, "UP %s  ",		"enp3s0"},
+	{ run_command, "  %s  ", "pactl list sinks | awk '$1==\"Volume:\" {print $5}'" },
+	{ cpu_perc, " %s%%  ",	NULL},
+	{ ram_used, " %s  ",		NULL},
+//	{ netspeed_rx, "DL %s ",		"enp3s0"},
+//	{ netspeed_tx, "UP %s  ",		"enp3s0"},
+	{ keymap,   "%s  ",			NULL},
 	{ datetime, "%s",           "%a %d-%m-%y %R:%S" },
 };
