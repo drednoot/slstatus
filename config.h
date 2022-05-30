@@ -65,6 +65,8 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
+	{ run_command, " [%s] ",	"rhythmbox-client --check-running && rhythmbox-client --print-playing | colrm 50"},
+	{ run_command, "  %s ",	"upower -d | awk -v RS='' '/Wireless Controller/' | grep percentage | awk '{print $2}'"},
 	{ run_command, "  %s  ", "pactl list sinks | awk '$1==\"Volume:\" {print $5}'" },
 	{ cpu_perc, " %s%%  ",	NULL},
 	{ ram_used, " %s  ",		NULL},
